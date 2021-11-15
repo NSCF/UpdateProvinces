@@ -13,8 +13,9 @@ def updateRecord(record, prov1, prov2):
             record['Check'] = 'y'
         
     else: #if they don't match, record both and mark to check
-        updateProv['updatedProv'] = prov1 + '|' + prov2
+        record['updatedProv'] = prov1 + '|' + prov2
         record['Check'] = 'y'
         
-    return updatedProv
-    #return record
+    return record['updatedProv']
+    return record
+    
