@@ -6,7 +6,6 @@ record = {'BRAHMS': '813', 'MAJORAREA': 'Transvaal', 'LOCNOTES': '5 miles east o
 #record = {'BRAHMS': '823', 'MAJORAREA': 'Transvaal', 'LOCNOTES': 'LABORATORY GROUNDS'}
 #record = {'BRAHMS': '828', 'MAJORAREA': 'Transvaal', 'LOCNOTES': 'WOLHUTERSKOP'}
 
-updateRecord(record,'NC', None )
+updateRecord(record,'NC', {'prov':'WC'} )
 
 print(record['updatedProv'] + ', ' + record['Check'])
-print(record)
