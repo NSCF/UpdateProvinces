@@ -1,11 +1,9 @@
 from updateRecord import updateRecord
 
 
-record = {'BRAHMS': '813', 'MAJORAREA': 'Transvaal', 'LOCNOTES': '5 miles east of Brits'}
-#record = {'BRAHMS': '814', 'MAJORAREA': 'Transvaal', 'LOCNOTES': 'Pretoria'}
-#record = {'BRAHMS': '823', 'MAJORAREA': 'Transvaal', 'LOCNOTES': 'LABORATORY GROUNDS'}
-#record = {'BRAHMS': '828', 'MAJORAREA': 'Transvaal', 'LOCNOTES': 'WOLHUTERSKOP'}
+records = [{'BRAHMS': '821', 'prov1': 'Northern Cape', 'prov2':'Northern Cape'}, {'BRAHMS': '814', 'prov1': None, 'prov2':'Northern Cape'}, {'BRAHMS': '814', 'prov1': 'Northern Cape', 'prov2': None}, {'BRAHMS': '821', 'prov1': 'Northern Cape', 'prov2':'Western Cape'}]
 
-updateRecord(record,'NC', {'prov':'WC'} )
 
-print(record['updatedProv'] + ', ' + record['Check'])
+for record in records:
+    updateRecord(record, record['prov1'], record['prov2'])
+    print(record['updatedProv'] + ', ' + record['Check'])
