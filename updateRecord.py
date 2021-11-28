@@ -7,12 +7,12 @@ def updateRecord(record, prov1, prov2):
         else:
             if prov1 is None:
                 record['updatedProv'] = prov2['prov']
-                if record['LOCNOTES'].strip().lower() == prov2.match.lower():
+                if record['LOCNOTES'].strip().lower() == prov2['match'].lower():
                     record['Check'] = ''
                 else: 
                     record['Check'] = 'y'
             else:
-                record['updatedProv'] = prov1 + '|' + prov2['prov']
+                record['updatedProv'] = prov1 + '|' + str(prov2['prov'])
                 record['Check'] = 'y'
            
     else: 
