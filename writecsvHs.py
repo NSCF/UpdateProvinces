@@ -9,8 +9,7 @@ def writecsv(list_dict, outFile):
         for the_dict in list_dict:
             writer.writerow(the_dict)  
 
-    print(list_dict)
-    csvfile.close()
+  
 
 
 
