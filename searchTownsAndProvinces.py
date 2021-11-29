@@ -1,10 +1,9 @@
 import re
 from RegEx import *
 
+def searchProvinces (locality):
 
-
-
-def searchProvinces (x):
+    x = locality #because I'm lazy
     
     result1 = re.search(regexKZN1, x, re.I)
     result2 = re.search(regexKZN2, x, re.I)
@@ -18,21 +17,31 @@ def searchProvinces (x):
     result10 = re.search(regexNorthernCape2, x, re.I)
     result11 = re.search(regexWesternCape, x, re.I)
     if result1 or result2:
-        return {"prov":"KwaZulu-Natal","match":result1.group() or result2.group()}
+        group = None
+        if result1:
+            group = result1.group()
+        else:
+            group = result2.group()
+        return {"prov":"KwaZulu-Natal","match": group}
+    elif result7:
+        return {"prov":"Mpumalanga", "match":result7.group()}
     elif result3:
         return {"prov":"Eastern Cape","match":result3.group()}
     elif result4:
         return {"prov":"Free State", "match":result4.group()}
     elif result5:
         return {"prov":"Gauteng", "match":result5.group()}
-    elif result6 == regexLimpopo:
+    elif result6:
         return {"prov":"Limpopo", "match":result6.group()}
-    elif result7:
-        return {"prov":"Mpumalanga", "match":result7.group()}
     elif result8:
         return {"prov":"North West", "match":result8.group()}
     elif result9 or result10:
-        return {"prov":"Northern Cape", "match":result9.group() or result10.group()}
+        group = None
+        if result9:
+            group = result9.group()
+        else:
+            group = result10.group()
+        return {"prov":"Northern Cape", "match": group}
     elif result11:
         return {"prov":"Western Cape", "match":result11.group()}
     else:

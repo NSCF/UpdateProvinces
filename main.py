@@ -1,23 +1,55 @@
-# this is the main script file that will do all the work
-# lets start by adding the processing steps here, as comments. We will then fill in the code
+#import necessary functions
+from readCSV import readCSV
+from writecsvHs import writecsv
+from searchTownsAndProvinces import searchProvinces
+from updateRecord import updateRecord
+from getQDSProvince import getQDSProvince
 
-#Install relevant softwares if any needs to be installed
+#import the records dataset
+fileName = 'TransvaalRecords_withLocality.csv'
+records = readCSV(fileName)
 
+hasLocalityProvince = 0
+hasQDSProvince = 0
+provinceAdded = 0
+mustCheck = 0
 
-#import the two spreadsheets into VSC(python)
+badQDSs = []
 
-#Compare the two spreadsheet according two QDS and add province (new field/column) where they have the same QDS
-    #import files
-#from numpy import left_shift
+#loop each record
+for record in records:
+    # get the province using the locality string
+    localityProvince = searchProvinces(record['LOCNOTES'])
+    if localityProvince:
+        hasLocalityProvince += 1
+    # get the province using the QDS
+    qdsProvince = None
 
+    try:
+        qdsProvince = getQDSProvince(record['QDS'])
+    except(Exception):
+        badQDSs.append(record['BRAHMS'])
 
-    #Function for comparing the two csv
+    if qdsProvince:
+        hasQDSProvince += 1
 
+    #update the record based on locality province and QDS province
+    updateRecord(record, qdsProvince, localityProvince)
+    if record['updatedProv']:
+        provinceAdded += 1
+    
+    if record['Check'] == 'y':
+        mustCheck += 1
 
-    #do a loop
+print('Provinces found for', hasLocalityProvince, 'records using locality')
+print('Provinces found for', hasQDSProvince, 'records using QDS')
+print('New province added for', provinceAdded, 'records')
+print(mustCheck, 'records must be checked')
 
-    #province using QDS and town name
-#Isolate single word city names and compare to city spreadsheet according to city names and add province in the field above
+if len(badQDSs) > 0:
+    print('We have bad QDSs in the following records:')
+    print('|'.join(badQDSs))
 
-#Export to csv
-#def df_join1.to_csv("Updated Povinces")
+#write the results
+writecsv(records, 'update.csv')
+print('Results saved')
