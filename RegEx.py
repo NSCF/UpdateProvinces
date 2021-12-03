@@ -14,7 +14,7 @@ regexLimpopo = r"\b(soutpansberg|sekgosese|pietersburg|letaba|ritavi|naphuno|pha
 
 regexMpumalanga = r"\b(mapulaneng|pelgrimsrus|pilgrim'?s\s*rest|witrivier|standerton|balfour|hoeveldrift|delmas|ermelo|bethal|witbank|mbibana|mdutjana|mkobola|amersfoort|wakkerstroom|piet\s+retief|eerstehoek|lydenburg|belfast|carolina|barberton|waterval-?\s*boven|nsikazi|nkomazi|dullstroom|timbavati|nelspruit|kaapsc?h?e\s*hoop|blyde\s+riv)\b"
 
-regexNorthWest = r"\b(vryburg|taung|christiana|schweizer-?\s*reneke|molopo|marico|ganyesa|bloemhof|wolmaransstad|klerksdorp|delareyville|ditsobotla|lichtenburg|lehurutshe|madikwe|cologny|ventersdorp|koster|potchefstroom|brits|odi|rustenburg|bafokeng|mankwe|moretele|swartruggens|oberholzer|magaliesberg)\b"
+regexNorthWest = r"\b(vryburg|taung|christiana|schweizer-?\s*reneke|molopo|marico|ganyesa|bloemhof|wolmaransstad|klerksdorp|delareyville|ditsobotla|lichtenburg|lehurutshe|madikwe|cologny|ventersdorp|koster|potchefstroom|brits|odi|rustenburg|bafokeng|mankwe|moretele|swartruggens|oberholzer)\b"
 
 regexNorthernCape1 = r"\b(namakwaland|calvinia|sutherland|kenhardt|williston|gordonia|fraserburg|carnarvon|victoria-?\s*west|prieska|britstown|de\s+aar|hopetown|hanover|philipstown|noupoort|colesberg|postmasburg|kuruman|barkly-?\s*west?|kimberley|warrenton|hartswater|kudumane)\b"
 
