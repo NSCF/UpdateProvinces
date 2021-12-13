@@ -2,17 +2,18 @@
 from readCSV import readCSV
 from writecsvHs import writecsv
 from searchTownsAndProvinces import searchProvinces
-from updateRecord import updateRecord
 from getQDSProvince import getQDSProvince
+from updateRecord import updateRecord
+
 
 #import the records dataset
 fileName = 'TransvaalRecords_withLocality.csv'
 records = readCSV(fileName)
 
-hasLocalityProvince = 0
-hasQDSProvince = 0
-provinceAdded = 0
-mustCheck = 0
+hasLocalityProvince = 0 #got a province from Sarena's function
+hasQDSProvince = 0 #got a province from Mahlatse's function
+provinceAdded = 0 #total number of records where the province is updated
+mustCheck = 0 # the number of records that need to be checked
 
 badQDSs = []
 

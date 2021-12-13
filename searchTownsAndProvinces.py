@@ -16,6 +16,7 @@ def searchProvinces (locality):
     result9 = re.search(regexNorthernCape1, x, re.I)
     result10 = re.search(regexNorthernCape2, x, re.I)
     result11 = re.search(regexWesternCape, x, re.I)
+    
     if result1 or result2:
         group = None
         if result1:

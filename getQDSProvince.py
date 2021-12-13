@@ -6,6 +6,12 @@ QDSProvinces = readCSV(fileName)
 
 # tranform to dictionary for fast lookup
 # we want a dictionary that looks like this
+
+indexExample = {
+  "2345CC": "Limpopo",
+  "2244DC": "Western Cape"
+}
+
 qdsIndex = {}
 
 for QDSProv in QDSProvinces:
@@ -32,8 +38,8 @@ for key in qdsIndex:
 
 #now the index looks like thos
 demo = { 
-  "2454CC": "Gauteng",
-  "3425CC": "Limpopo",
+  "2454CC": "GP",
+  "3425CC": "LP",
   "5425DD": None
 }
 
