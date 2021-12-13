@@ -52,5 +52,5 @@ if len(badQDSs) > 0:
     print('|'.join(badQDSs))
 
 #write the results
-writecsv(records, 'update.csv')
+writecsv(records, 'Transvaal_updates.csv')
 print('Results saved')
