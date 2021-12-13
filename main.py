@@ -7,7 +7,11 @@ from updateRecord import updateRecord
 
 
 #import the records dataset
-fileName = 'TransvaalRecords_withLocality.csv'
+#fileName = 'TransvaalRecords_withLocality.csv'
+fileName = 'CapeRecords_withLocality.csv'
+outFileName = 'CapeRecords_update.csv'
+
+
 records = readCSV(fileName)
 
 hasLocalityProvince = 0 #got a province from Sarena's function
@@ -46,11 +50,12 @@ print('Provinces found for', hasLocalityProvince, 'records using locality')
 print('Provinces found for', hasQDSProvince, 'records using QDS')
 print('New province added for', provinceAdded, 'records')
 print(mustCheck, 'records must be checked')
+print(provinceAdded - mustCheck, 'can be updated without checking')
 
 if len(badQDSs) > 0:
     print('We have bad QDSs in the following records:')
     print('|'.join(badQDSs))
 
 #write the results
-writecsv(records, 'Transvaal_updates.csv')
-print('Results saved')
+writecsv(records, outFileName)
+print('Results saved as', outFileName)
